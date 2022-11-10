@@ -1,9 +1,10 @@
 import './App.css';
+import CryptoChart from './components/Chart/CryptoChart';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">Hello ther</header>
+      <CryptoChart />
     </div>
   );
 }
