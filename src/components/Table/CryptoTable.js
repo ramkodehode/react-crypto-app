@@ -28,8 +28,6 @@ const CryptoTable = () => {
     getCoinData();
   }, []);
 
-  console.log('Here is the data', coins);
-
   {
   }
   return (
