@@ -8,7 +8,7 @@ const CryptoChart = ({ coin }) => {
   const [search, setSearch] = useState('');
 
   const url =
-    'https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=365';
+    'https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=1825';
 
   const getData = async () => {
     axios
@@ -27,24 +27,30 @@ const CryptoChart = ({ coin }) => {
 
   const options = {
     rangeSelector: {
+      allButtonsEnabled: true,
       buttons: [
         {
           type: 'year',
           count: 1,
+          text: '1Y',
+          title: 'view 3 years',
+        },
+        {
+          type: 'year',
+          count: 3,
           text: '3Y',
-          title: 'view',
+          title: 'view 3 years',
         },
         {
           type: 'year',
-          count: 1,
+          count: 5,
           text: '5Y',
-          title: 'view',
+          title: 'view 5 years',
         },
         {
-          type: 'year',
-          count: 1,
+          type: 'all',
           text: 'MAX',
-          title: 'view',
+          title: 'View all',
         },
       ],
     },
@@ -54,7 +60,7 @@ const CryptoChart = ({ coin }) => {
 
     series: [
       {
-        data: [1, 2, 1, 4, 3, 6, 7, 3, 8, 6, 9],
+        data: coins.prices,
       },
     ],
   };
