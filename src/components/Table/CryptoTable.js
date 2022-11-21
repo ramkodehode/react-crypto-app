@@ -41,7 +41,7 @@ const CryptoTable = () => {
       </Form>
 
       {filteredCoins.map((coin) => {
-        return coin.name;
+        return <div>{coin.name}</div>;
       })}
     </>
   );
